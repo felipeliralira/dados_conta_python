@@ -5,6 +5,24 @@ class Conta:
         self.saldo = saldo_conta
         self.limite = limite_conta
 
+    #Declaração dos métodos (funções)
+    def extrato(self):
+        print(f"Saldo atual: {self.saldo} do titular {self.titular}")
+
+    def depositar(self, valor):
+        if self.valor < 0:
+            print("Valor de depósito inválido")
+        else:
+            self.saldo += valor
+            print(f"Depósito de {valor} realizado com sucesso. Saldo atual: {self.saldo}")
+
+    def sacar(self, valor):
+        self.saldo -= valor
+        if self.saldo < valor:
+            print("Saldo insuficiente")
+        else:
+            print(f"Saque de {valor} realizado com sucesso. Saldo atual: {self.saldo}")
+
 
 #Crie uma classe que represente um vídeo com os atributos título, duração e views
 class Video:
